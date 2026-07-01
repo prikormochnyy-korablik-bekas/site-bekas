@@ -190,3 +190,44 @@ setInterval(function() {
         onlineEl.textContent = online;
     }
 }, 30000); // обновляем раз в 30 секунд
+
+// ===== 9. СКРЫТИЕ СЛАЙДЕРА ПРИ ПРОКРУТКЕ =====
+(function() {
+    const slider = document.querySelector('.photo-slider');
+    if (!slider) return;
+
+    let lastScrollY = window.scrollY;
+    let isHidden = false;
+
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+
+        // Если прокрутили больше чем на 200px — скрываем слайдер
+        if (currentScrollY > 150 && !isHidden) {
+            slider.classList.add('hidden');
+            isHidden = true;
+        }
+        // Если вернулись наверх — показываем
+        else if (currentScrollY <= 150 && isHidden) {
+            slider.classList.remove('hidden');
+            isHidden = false;
+        }
+
+        lastScrollY = currentScrollY;
+    }
+
+    // Используем requestAnimationFrame для плавности (оптимизация)
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    // Запускаем проверку при загрузке (на случай, если страница уже прокручена)
+    setTimeout(handleScroll, 100);
+})();
