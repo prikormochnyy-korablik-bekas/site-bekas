@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя первая страница</title>
+    
+    <!-- Подключаем наши стили -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Подключаем шрифты из Google (делает сайт красивее) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ШАПКА (навигация) -->
+    <header>
+        <nav>
+            <div class="logo">Мой сайт</div>
+            <ul>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ГЛАВНЫЙ БЛОК (Hero) -->
+    <section class="hero">
+        <h1>Привет, я создаю сайты</h1>
+        <p>Это мой первый проект, написанный вручную</p>
+        <a href="#contacts" class="btn">Связаться</a>
+    </section>
+
+    <!-- БЛОК "Обо мне" -->
+    <section id="about" class="about">
+        <h2>Обо мне</h2>
+        <div class="about-content">
+            <p>Меня зовут [Ваше имя]. Я начинающий веб-разработчик и учусь создавать сайты с нуля. Мне нравится чистый код и красивые интерфейсы.</p>
+        </div>
+    </section>
+
+    <!-- БЛОК "Услуги" -->
+    <section id="services" class="services">
+        <h2>Что я умею</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Вёрстка</h3>
+                <p>Создаю структуру сайтов на HTML и CSS</p>
+            </div>
+            <div class="service-card">
+                <h3>Адаптация</h3>
+                <p>Делаю так, чтобы сайт красиво смотрелся на телефоне</p>
+            </div>
+            <div class="service-card">
+                <h3>Интерактив</h3>
+                <p>Добавляю анимации и кнопки с помощью JavaScript</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК "Контакты" -->
+    <section id="contacts" class="contacts">
+        <h2>Свяжитесь со мной</h2>
+        <p>Email: example@mail.com</p>
+        <button id="showAlert">Нажми на меня</button>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer>
+        <p>© 2026 Мой первый сайт. Сделано с ❤️</p>
+    </footer>
+
+    <!-- Подключаем JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
