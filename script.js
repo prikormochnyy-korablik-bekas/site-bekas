@@ -154,28 +154,77 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// ===== 6. СКРЫТИЕ СЛАЙДЕРА ПРИ ПРОКРУТКЕ (ПЛАВНОЕ) =====
+// ===== 6. СКРЫТИЕ ВЕРХНЕЙ ЧАСТИ ПРИ ПРОКРУТКЕ (ШАПКА + СЛАЙДЕР) =====
 (function() {
+    // Находим шапку (header) и слайдер
+    const header = document.querySelector('header');
     const slider = document.querySelector('.photo-slider');
-    if (!slider) return;
+    
+    if (!header) return;
 
+    // Находим навигацию (вкладки) — она должна оставаться видимой
+    const nav = document.querySelector('.main-nav');
+    
+    // Получаем высоту шапки (без навигации)
+    const headerTop = document.querySelector('.header-top');
+    
     function handleScroll() {
         const scrollY = window.scrollY;
         
-        // Прозрачность от 1 до 0 при прокрутке от 0 до 150px
-        const opacity = Math.max(0, 1 - (scrollY / 150));
+        // Порог скрытия — 100px прокрутки
+        const threshold = 100;
         
-        // Применяем прозрачность
-        slider.style.opacity = opacity;
-        
-        // Скрываем полностью, когда прозрачность стала 0
-        if (opacity <= 0) {
-            slider.style.pointerEvents = 'none';
+        if (scrollY > threshold) {
+            // Скрываем шапку (логотип + кнопка "Заказать")
+            if (header) {
+                header.style.transform = 'translateY(-100%)';
+                header.style.opacity = '0';
+                header.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+                header.style.pointerEvents = 'none';
+            }
+            
+            // Скрываем слайдер (если он есть)
+            if (slider) {
+                slider.style.transform = 'translateY(-100%)';
+                slider.style.opacity = '0';
+                slider.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+                slider.style.pointerEvents = 'none';
+            }
+            
+            // Навигацию (вкладки) ОСТАВЛЯЕМ на месте
+            if (nav) {
+                nav.style.position = 'sticky';
+                nav.style.top = '0';
+                nav.style.zIndex = '999';
+                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+            }
+            
         } else {
-            slider.style.pointerEvents = 'auto';
+            // Показываем шапку обратно
+            if (header) {
+                header.style.transform = 'translateY(0)';
+                header.style.opacity = '1';
+                header.style.pointerEvents = 'auto';
+            }
+            
+            // Показываем слайдер обратно
+            if (slider) {
+                slider.style.transform = 'translateY(0)';
+                slider.style.opacity = '1';
+                slider.style.pointerEvents = 'auto';
+            }
+            
+            // Убираем лишние стили с навигации
+            if (nav) {
+                nav.style.position = '';
+                nav.style.top = '';
+                nav.style.zIndex = '';
+                nav.style.boxShadow = '';
+            }
         }
     }
 
+    // Оптимизация производительности
     let ticking = false;
     window.addEventListener('scroll', function() {
         if (!ticking) {
@@ -187,7 +236,8 @@ document.addEventListener('keydown', function(e) {
         }
     });
 
-    handleScroll();
+    // Запускаем проверку при загрузке
+    setTimeout(handleScroll, 100);
 })();
 
 // ===== 7. ОБНОВЛЕНИЕ СЧЁТЧИКА ОНЛАЙН (каждые 30 секунд) =====
