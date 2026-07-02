@@ -121,12 +121,23 @@
 
         /* --- ЦЕНТР: кнопка со сдвигом влево --- */
         .header__center {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 15px;
-            margin-right: -200px;
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;           /* расстояние между кнопкой и текстом */
+          padding: 0 15px;
+        }
+        /* Новый блок с текстом */
+        .header__tagline {
+          color: #d4a84b;
+          font-weight: 600;
+          font-size: 1rem;
+          text-align: center;
+          line-height: 1.4;
+          max-width: 350px;
+          z-index: 2;
+          text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
 
         .header__order-btn {
@@ -329,8 +340,12 @@
         </div>
 
         <div class="header__center">
-            <button class="header__order-btn" id="orderBtn">Заказать</button>
-        </div>
+    <button class="header__order-btn" id="orderBtn">Заказать</button>
+    
+    <!-- Новый четвёртый блок -->
+    <div class="header__tagline">
+        Тестируем ArduRover • Строим маршруты • Выезды с палаткой
+    </div>
 
         <div class="header__right">
             <a href="tel:+79158706979" class="header__phone">+7 915 870 69 79</a>
