@@ -7,6 +7,7 @@
     
     <!-- ===== ВСЕ СТИЛИ ЗДЕСЬ ===== -->
     <style>
+        
         /* ===== СБРОС ===== */
         * {
             margin: 0;
@@ -23,6 +24,59 @@
     background-repeat: no-repeat;  /* Не повторяем, если картинка маленькая */
             padding-top: 100px;
         }
+
+        /* Подвал */
+    .site-footer {
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+      padding-top: 40px;
+      padding-bottom: 20px;
+      flex: 0 0 auto;
+    }
+
+    .site-footer .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    .footer-col h3 {
+      color: #fff;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      border-left: 4px solid #d4a84b;
+      padding-left: 12px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-col a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #888;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+    }
 
         /* ===== ШАПКА ===== */
         .header {
@@ -566,5 +620,32 @@
 
         console.log('✅ Сайт "Бекас" загружен успешно!');
     </script>
+
+    <!-- Подвал -->
+  <footer class="site-footer">
+    <div class="content">
+      <div class="footer-col">
+        <h3>О нас</h3>
+        <p>Делаем туристическую еду и прикормки, тестируем закормочные кораблики и делимся путешествиями с палаткой.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Ссылки</h3>
+        <ul>
+          <li><a href="#">YouTube‑канал</a></li>
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">VK</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Контакты</h3>
+        <p>Email: hello@example.com<br>
+          Телефон: +7 (999) 000‑00‑00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Твой бренд. Все права защищены.
+    </div>
+  </footer>
+
 </body>
 </html>
