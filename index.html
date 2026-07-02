@@ -377,6 +377,176 @@
     box-shadow: 0 0 30px rgba(0, 132, 255, 0.5) !important;
 }
 
+/* Кнопка "Подробнее" */
+.btn-details {
+    background: transparent;
+    border: 2px solid #5aa1ff;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(90, 161, 255, 0.4);
+}
+
+.btn-details:hover {
+    background: #5aa1ff;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(90, 161, 255, 0.6);
+}
+
+/* Модальное окно */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* скрыто по умолчанию */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+    padding: 20px;
+}
+
+.modal-window {
+    background: #1a1a1a;
+    color: #e0e0e0;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #333;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    animation: modal-fade-in 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes modal-fade-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    font-size: 1.6rem;
+    color: #b7dfff;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: 0.3s;
+}
+
+.modal-close:hover {
+    color: #fff;
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+}
+
+.modal-images {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-img-item {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #444;
+}
+
+.modal-info h3 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.modal-specs {
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.modal-features {
+    list-style: none;
+    padding: 0;
+    color: #ddd;
+}
+
+.modal-features li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 22px;
+}
+
+.modal-features li::before {
+    content: "•";
+    color: #5aa1ff;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.modal-cta {
+    padding: 20px 25px;
+    border-top: 1px solid #333;
+    text-align: right;
+}
+
+.btn-order-from-modal {
+    background: #5490ff;
+    color: #000;
+    border: none;
+    padding: 14px 32px;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.btn-order-from-modal:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(84, 144, 255, 0.6);
+}
+
+/* Адаптив модального окна */
+@media (max-width: 768px) {
+    .modal-body {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+    .modal-images, .modal-info {
+        width: 100%;
+    }
+}
+
 
         /* ===== АДАПТИВ ===== */
         @media (max-width: 1024px) {
@@ -469,14 +639,14 @@
         <p>✅ Более 2000 довольных клиентов</p>
         
 
-        <!-- Секция товаров -->
+<!-- Секция товаров -->
 <section class="products-section">
     <div class="content">
         <h2 class="section-title">Модели прикормочных корабликов</h2>
 
         <div class="products-grid">
             <!-- Товар 1 -->
-            <article class="product-card">
+            <article class="product-card" data-product="SpeeD v4">
                 <div class="product-img-wrapper">
                     <img src="images/speed-v4.jpg" alt="Прикормочный кораблик SpeeD v4" class="product-img" loading="lazy">
                     <span class="badge badge-new">Новинка</span>
@@ -487,11 +657,11 @@
                     Время работы: 4 ч<br>
                     Особенности: DShot 300, телеметрия
                 </p>
-                <button class="product-btn header__order-btn" type="button">Заказать</button>
+                <button type="button" class="product-btn btn-details">Подробнее</button>
             </article>
 
             <!-- Товар 2 -->
-            <article class="product-card">
+            <article class="product-card" data-product="Mono">
                 <div class="product-img-wrapper">
                     <img src="images/mono.jpg" alt="Прикормочный кораблик Mono" class="product-img" loading="lazy">
                 </div>
@@ -501,11 +671,11 @@
                     Время работы: 3.5 ч<br>
                     Особенности: компактный корпус
                 </p>
-                <button class="product-btn header__order-btn" type="button">Заказать</button>
+                <button type="button" class="product-btn btn-details">Подробнее</button>
             </article>
 
             <!-- Товар 3 -->
-            <article class="product-card">
+            <article class="product-card" data-product="Solo">
                 <div class="product-img-wrapper">
                     <img src="images/solo.jpg" alt="Прикормочный кораблик Solo" class="product-img" loading="lazy">
                 </div>
@@ -515,11 +685,12 @@
                     Время работы: 5 ч<br>
                     Особенности: увеличенная ёмкость
                 </p>
-                <button class="product-btn header__order-btn" type="button">Заказать</button>
+                <button type="button" class="product-btn btn-details">Подробнее</button>
             </article>
         </div>
     </div>
 </section>
+
     </main>
 
      <!-- Подвал -->
@@ -810,7 +981,92 @@
         console.log('✅ Сайт "Бекас" загружен успешно!');
     </script>
 
-   
+   <script>
+document.querySelectorAll('.btn-details').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const card = this.closest('.product-card');
+        const title = card.querySelector('.product-title').textContent;
+        const specs = card.querySelector('.product-specs').innerHTML;
+
+        // Здесь можно подставлять дополнительные фото для каждой модели
+        const images = {
+            'SpeeD v4': [
+                'images/speed-v4-main.jpg',
+                'images/speed-v4-side.jpg',
+                'images/speed-v4-electronics.jpg' // например, плата с DShot
+            ],
+            'Mono': [
+                'images/mono-main.jpg',
+                'images/mono-top.jpg'
+            ],
+            'Solo': [
+                'images/solo-main.jpg',
+                'images/solo-bottom.jpg',
+                'images/solo-battery.jpg'
+            ]
+        };
+
+        const productImages = images[title] || [];
+
+        const modalOverlay = document.createElement('div');
+        modalOverlay.className = 'modal-overlay';
+
+        let imagesHtml = '';
+        if (productImages.length > 0) {
+            productImages.forEach(imgSrc => {
+                imagesHtml += `<img src="${imgSrc}" alt="${title}" class="modal-img-item" loading="lazy">`;
+            });
+        } else {
+            imagesHtml = `<p style="color:#888">Фото в обработке</p>`;
+        }
+
+        modalOverlay.innerHTML = `
+            <div class="modal-window">
+                <div class="modal-header">
+                    <h3 class="modal-title">${title}</h3>
+                    <button type="button" class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-images">${imagesHtml}</div>
+                    <div class="modal-info">
+                        <h3>Характеристики</h3>
+                        <div class="modal-specs">${specs.replace(/<br>/g, ' • ')}</div>
+
+                        <h4>Особенности для рыболова и путешественника:</h4>
+                        <ul class="modal-features">
+                            <li>Подходит для выездов с палаткой: лёгкий, компактный</li>
+                            <li>DShot 300 — стабильная работа ESC даже на холоде</li>
+                            <li>Можно снимать тесты рядом с ArduRover — одинаковая электроника</li>
+                            <li>Удобно перевозить в рюкзаке для дальних маршрутов</li>
+                        </ul>
+
+                        <p style="font-size:0.9rem; color:#888;">
+                            В видео на YouTube мы показываем реальные тесты на воде, замеры дальности и разбор электроники.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-cta">
+                    <button type="button" class="btn-order-from-modal" onclick="this.closest('.modal-overlay').remove(); alert('Форма заказа откроется отдельно!');">Заказать</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(modalOverlay);
+        modalOverlay.style.display = 'flex';
+
+        // Закрытие по крестику
+        modalOverlay.querySelector('.modal-close').addEventListener('click', () => {
+            modalOverlay.remove();
+        });
+
+        // Закрытие по клику вне окна
+        modalOverlay.addEventListener('click', e => {
+            if (e.target === modalOverlay) modalOverlay.remove();
+        });
+    });
+});
+</script>
+
 
 </body>
 </html>
