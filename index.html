@@ -1,285 +1,236 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Прикормочные кораблики Бекас — производство РФ</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Прикормочные кораблики CorveD — производство РФ</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ============ ШАПКА ============ -->
-<header class="header">
-    <div class="container header-inner">
-        <div class="logo">
-            <span>Бекас</span>
-            <small>прикормочные кораблики</small>
+    <!-- ШАПКА -->
+    <header class="header">
+        <div class="container header__inner">
+            <div class="logo">
+                <img src="logo.png" alt="CorveD" />
+                <span class="logo__text">CorveD</span>
+            </div>
+            <nav class="nav">
+                <a href="#models">Модели</a>
+                <a href="#options">Опции</a>
+                <a href="#delivery">Доставка</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <a href="#order" class="btn btn--primary">Заказать</a>
         </div>
-        <div class="header-phone">
-            <a href="tel:+79158706979">+7 (915) 870-69-79</a>
-        </div>
-        <a href="#form" class="btn">Заказать звонок</a>
-    </div>
-</header>
+    </header>
 
-<!-- ============ ГЛАВНЫЙ ЭКРАН ============ -->
-<section class="hero">
-    <div class="container">
-        <h1>Прикормочные кораблики <span>Бекас</span></h1>
-        <p>Российский производитель карповых корабликов. 3 популярные модели, 26 модификаций, 12 месяцев гарантии.</p>
-        <div class="hero-form" id="form">
-            <p class="form-title">Ответьте на 3 вопроса за 1 минуту</p>
-            <p class="form-sub">Мы подберём модель для вашего региона</p>
-            <button class="btn" onclick="submitForm()">Помочь подобрать кораблик</button>
-            <small>Нажимая на кнопку, вы даёте согласие на обработку данных</small>
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="hero">
+        <div class="container hero__inner">
+            <h1 class="hero__title">Прикормочные кораблики для рыбалки CorveD</h1>
+            <p class="hero__subtitle">Российский производитель. Гарантия 1 год. Доставка по РФ.</p>
+            <a href="#quiz" class="btn btn--large">Подобрать модель за 1 минуту</a>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ============ ПОЧЕМУ МЫ ============ -->
-<section class="section">
-    <div class="container">
-        <h2 class="section-title">Почему <span>Бекас</span>?</h2>
-        <div class="grid-3">
-            <div class="card">
-                <div class="card-icon">⚙️</div>
-                <h3>Сделано в России</h3>
-                <p>Производство в Краснодарском крае. Полный контроль качества на каждом этапе.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🔧</div>
-                <h3>26 модификаций</h3>
-                <p>Под любые задачи: автопилот, эхолот, усиленный корпус, цветовые решения.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🛡️</div>
-                <h3>Гарантия 12 месяцев</h3>
-                <p>Техническая поддержка и сервис даже после истечения гарантийного срока.</p>
+    <!-- ПРЕИМУЩЕСТВА -->
+    <section class="advantages">
+        <div class="container">
+            <h2 class="section-title">Почему мы?</h2>
+            <div class="advantages__grid">
+                <div class="advantage-item">
+                    <h3>Собственное производство</h3>
+                    <p>Изготавливаем в Краснодарском крае. Полный контроль качества.</p>
+                </div>
+                <div class="advantage-item">
+                    <h3>12 месяцев гарантии</h3>
+                    <p>Техническая поддержка и ремонт даже после окончания гарантии.</p>
+                </div>
+                <div class="advantage-item">
+                    <h3>Более 2000 клиентов</h3>
+                    <p>Кораблики CorveD уже нашли своих владельцев по всей России.</p>
+                </div>
+                <div class="advantage-item">
+                    <h3>26 модификаций</h3>
+                    <p>Под любые задачи и условия рыбалки.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ============ ИНТЕРАКТИВНАЯ СХЕМА ============ -->
-<section class="section scheme-section">
-    <div class="container">
-        <h2 class="section-title">Конструкция продумана <span>до мелочей</span></h2>
-        <div class="scheme-wrapper">
-            <div class="scheme-image">
-                <span class="scheme-badge">Модель SpeeD V5</span>
+    <!-- МОДЕЛИ (Speed V4 / V5) -->
+    <section class="models" id="models">
+        <div class="container">
+            <h2 class="section-title">Кораблик для рыбалки CorveD — ваш надежный помощник</h2>
+            <p class="section-subtitle">Спроектированы с умом, собраны со знанием дела и с вниманием к каждой детали</p>
+            
+            <div class="model-card">
+                <h3>CorveD SpeeD v5</h3>
+                <div class="model-features">
+                    <ul>
+                        <li>Килевое дно — устойчивость при волне до 1 метра</li>
+                        <li>ABS пластик 3 мм, ударопрочный</li>
+                        <li>Объёмный бункер 1–1.2 л</li>
+                        <li>Усиленная фара с противотуманным режимом</li>
+                        <li>4 ярких габарита (2 — индикаторы сброса)</li>
+                        <li>Мощные сервоприводы до 20 кг</li>
+                        <li>Полная герметизация морским герметиком</li>
+                    </ul>
+                    <img src="speed-v5.png" alt="Speed V5" />
+                </div>
             </div>
-            <div class="scheme-features">
-                <ul>
-                    <li>Герметичный корпус (морской герметик)</li>
-                    <li>Килевое дно — устойчивость при волне до 1 м</li>
-                    <li>Ударопрочный ABS-пластик (3 мм)</li>
-                    <li>Усиленная фара с противотуманным режимом</li>
-                    <li>4 ярких габарита, индикаторы сброса</li>
-                    <li>Объёмный бункер 1–1.2 л</li>
-                    <li>Мощные сервоприводы (до 20 кг)</li>
-                    <li>Возможность установки эхолота и камеры</li>
-                </ul>
+
+            <div class="model-card">
+                <h3>CorveD SpeeD v4</h3>
+                <div class="model-features">
+                    <ul>
+                        <li>Все преимущества V5</li>
+                        <li>Возможность установки центрального сброса</li>
+                        <li>Посадочное место для эхолота</li>
+                        <li>Место для установки глубиномера</li>
+                        <li>Стальной винт, руль и защита винта</li>
+                        <li>Возможность установки курсовой камеры</li>
+                    </ul>
+                    <img src="speed-v4.png" alt="Speed V4" />
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ============ ПОПУЛЯРНЫЕ РЕШЕНИЯ ============ -->
-<section class="section">
-    <div class="container">
-        <h2 class="section-title">Популярные <span>решения</span></h2>
-        <div class="grid-3">
-            <div class="card">
-                <div class="card-icon">🤖</div>
-                <h3>Автопилот V10</h3>
-                <p>Полная автоматизация маршрута, удержание точки, возврат при потере сигнала.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">⚓</div>
-                <h3>Электроякорь</h3>
-                <p>Кораблик остаётся на точке даже при порывах ветра и течении.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">📡</div>
-                <h3>Усилитель сигнала</h3>
-                <p>Связь с эхолотом до 400 метров без потери сигнала.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🎯</div>
-                <h3>Круиз NON‑STOP</h3>
-                <p>Ровный ход без «змейки» даже на волнах.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🗣️</div>
-                <h3>Голосовой ассистент</h3>
-                <p>Оповещения через пульт на русском языке.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🔄</div>
-                <h3>Центральный сброс</h3>
-                <p>Снасть сбрасывается на 2–3 метра от места прикормки для крупной рыбы.</p>
+    <!-- ОПЦИИ (список) -->
+    <section class="options" id="options">
+        <div class="container">
+            <h2 class="section-title">Популярные решения для корабликов</h2>
+            <div class="options__grid">
+                <div class="option-item">Автопилот V10</div>
+                <div class="option-item">Электроякорь</div>
+                <div class="option-item">Круиз NON-STOP</div>
+                <div class="option-item">Отложенный старт</div>
+                <div class="option-item">Усилитель сигнала для Deeper</div>
+                <div class="option-item">Эхолот Акваробот-kogger</div>
+                <div class="option-item">Универсальное крепление для эхолотов</div>
+                <div class="option-item">Защитный бортик</div>
+                <div class="option-item">Защитная крышка на пульт Flysky</div>
+                <div class="option-item">Вибро-шумоизоляция</div>
+                <div class="option-item">Багор</div>
+                <div class="option-item">868 частота (до 1 км)</div>
+                <div class="option-item">Пульт с Li-ion аккумулятором</div>
+                <div class="option-item">Электронный маркер</div>
+                <div class="option-item">Модуль автовозврата</div>
+                <div class="option-item">Глубиномер</div>
+                <div class="option-item">Дальномер</div>
+                <div class="option-item">Пульт на русском языке</div>
+                <div class="option-item">Голосовой ассистент</div>
+                <div class="option-item">Регулируемая яркость</div>
+                <div class="option-item">Центральный сброс</div>
+                <div class="option-item">Электронная защита двигателя</div>
+                <div class="option-item">Защита винта из нержавеющей стали</div>
+                <div class="option-item">Защита ручки</div>
+                <div class="option-item">Разбрасыватель прикормки</div>
+                <div class="option-item">Курсовая камера</div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ============ ЦЕНЫ ============ -->
-<section class="section price-section">
-    <div class="container">
-        <h2 class="section-title">Модели и <span>цены</span></h2>
-        <div class="prices-grid">
-            <div class="price-card">
-                <h4>SpeeD V4</h4>
-                <div class="price">49 900 <span>₽</span></div>
-                <ul>
-                    <li>Корпус ABS, 3 мм</li>
-                    <li>Бункер 1.0 л</li>
-                    <li>Дальность до 600 м</li>
-                    <li>Автопилот (опция)</li>
-                </ul>
-                <a href="#form" class="btn">Заказать</a>
+    <!-- УПРАВЛЕНИЕ -->
+    <section class="control">
+        <div class="container">
+            <h2 class="section-title">Контролируйте процесс рыбалки двумя пальцами</h2>
+            <ul class="control__list">
+                <li>Удобный 14-канальный пульт</li>
+                <li>Автовозврат с сохранением домашней точки</li>
+                <li>Дальномер от нулевой точки</li>
+                <li>Задний ход для труднодоступных мест</li>
+                <li>Русский язык на пульте</li>
+                <li>Голосовое оповещение</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ДОСТАВКА И ОПЛАТА -->
+    <section class="delivery" id="delivery">
+        <div class="container">
+            <h2 class="section-title">Доставка по всей России</h2>
+            <div class="delivery__steps">
+                <div class="step">
+                    <span class="step__num">1</span>
+                    <h4>Высылаем договор</h4>
+                    <p>С печатью и подписью. Работаем с физ. и юр. лицами.</p>
+                </div>
+                <div class="step">
+                    <span class="step__num">2</span>
+                    <h4>Получаем оплату</h4>
+                    <p>Аванс 5 000 руб., оплата при получении, кредит, рассрочка, USDT.</p>
+                </div>
+                <div class="step">
+                    <span class="step__num">3</span>
+                    <h4>Проверяем</h4>
+                    <p>Каждый кораблик тестируем на водоёме и настраиваем.</p>
+                </div>
+                <div class="step">
+                    <span class="step__num">4</span>
+                    <h4>Отправляем</h4>
+                    <p>СДЭК, Почта России, Boxberry. Страхуем груз.</p>
+                </div>
             </div>
-            <div class="price-card">
-                <h4>SpeeD V5</h4>
-                <div class="price">59 900 <span>₽</span></div>
-                <ul>
-                    <li>Усиленный корпус</li>
-                    <li>Бункер 1.2 л</li>
-                    <li>Дальность до 800 м</li>
-                    <li>Электроякорь (опция)</li>
-                </ul>
-                <a href="#form" class="btn">Заказать</a>
-            </div>
-            <div class="price-card">
-                <h4>Mono</h4>
-                <div class="price">44 900 <span>₽</span></div>
-                <ul>
-                    <li>Лёгкий корпус</li>
-                    <li>Бункер 0.9 л</li>
-                    <li>Дальность до 500 м</li>
-                    <li>Идеален для начинающих</li>
-                </ul>
-                <a href="#form" class="btn">Заказать</a>
-            </div>
-            <div class="price-card">
-                <h4>Solo</h4>
-                <div class="price">39 900 <span>₽</span></div>
-                <ul>
-                    <li>Компактный размер</li>
-                    <li>Бункер 0.8 л</li>
-                    <li>Дальность до 400 м</li>
-                    <li>Бюджетное решение</li>
-                </ul>
-                <a href="#form" class="btn">Заказать</a>
+            <p class="delivery__info">Сроки: 5–6 дней (Центральная Россия), до 14 дней (Дальний Восток).</p>
+        </div>
+    </section>
+
+    <!-- ДЕМОНСТРАЦИЯ -->
+    <section class="demo">
+        <div class="container demo__inner">
+            <h2>Посмотрите на кораблик и протестируйте вживую</h2>
+            <p>Запишитесь на демонстрацию по WhatsApp. Всё покажем и расскажем.</p>
+            <a href="#demo-form" class="btn btn--large">Бесплатная демонстрация</a>
+        </div>
+    </section>
+
+    <!-- ПАРТНЁРЫ -->
+    <section class="partners">
+        <div class="container">
+            <h2 class="section-title">Наши партнёры</h2>
+            <p>Используем только оригинальные комплектующие мировых брендов</p>
+            <div class="partners__logos">
+                <span>Бренд 1</span>
+                <span>Бренд 2</span>
+                <span>Бренд 3</span>
+                <span>Бренд 4</span>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ============ ОТЗЫВЫ ============ -->
-<section class="section">
-    <div class="container">
-        <h2 class="section-title">Что говорят <span>рыбаки</span></h2>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="text">«Отличный кораблик! Брал SpeeD V5 с автопилотом — доволен как слон. Удержание точки идеальное.»</p>
-                <div class="name">Алексей, Московская обл.</div>
+    <!-- ФОРМА ЗАКАЗА -->
+    <section class="order" id="order">
+        <div class="container order__inner">
+            <h2 class="section-title">Оформить заказ</h2>
+            <form class="order-form">
+                <input type="text" placeholder="Ваше имя" required />
+                <input type="tel" placeholder="+7 (___) ___-__-__" required />
+                <button type="submit" class="btn btn--primary">Отправить заявку</button>
+                <p class="form__note">Нажимая на кнопку, вы даёте согласие на обработку персональных данных</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__info">
+                <p><strong>CorveD</strong> © 2016–2025</p>
+                <p>Производство: Краснодарский край, ст. Ленинградская</p>
+                <p>Режим работы: Пн–Пт с 9:00 до 18:00</p>
             </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="text">«Пользуюсь Mono уже второй сезон. Надёжный, лёгкий, прикорм доставляет точно. Рекомендую.»</p>
-                <div class="name">Сергей, Ростов-на-Дону</div>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="text">«Купил Solo для начала. Очень удобный пульт, всё интуитивно. Теперь думаю взять V5.»</p>
-                <div class="name">Иван, Краснодар</div>
+            <div class="footer__links">
+                <a href="#">Условия обработки данных</a>
+                <a href="#">Политика cookies</a>
             </div>
         </div>
-    </div>
-</section>
+    </footer>
 
-<!-- ============ ВОПРОСЫ ============ -->
-<section class="section faq-section">
-    <div class="container">
-        <h2 class="section-title">Часто задаваемые <span>вопросы</span></h2>
-        <div class="faq-grid">
-            <div class="faq-item">
-                <h4>Как происходит заказ и доставка?</h4>
-                <p>Высылаем договор, вы вносите аванс 5000₽, запускаем производство (5–20 дней), тестируем и отправляем СДЭК или Почтой России.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Можно ли оплатить при получении?</h4>
-                <p>Да, мы работаем с наложенным платежом. Все подробности уточняйте у менеджера.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Какой срок доставки?</h4>
-                <p>5–6 рабочих дней до центральных регионов, до 14 дней — для дальних (Владивосток и др.).</p>
-            </div>
-            <div class="faq-item">
-                <h4>Есть ли гарантия?</h4>
-                <p>12 месяцев гарантии и пожизненная техническая поддержка. Помогаем даже после гарантии.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Можно ли установить эхолот?</h4>
-                <p>Да, все модели имеют посадочное место для эхолота Deeper, LUCKY, Fishfinder и нашего АкваРОБОТ-kogger.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Какие опции доступны?</h4>
-                <p>Более 20 опций: автопилот, эхолот, камера, разбрасыватель, защита винта, голосовой ассистент и другие.</p>
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- КНОПКА СВЯЗИ (онлайн-чат) -->
+    <div class="chat-button">💬</div>
 
-<!-- ============ ПОДВАЛ ============ -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div>
-                <h4>Бекас</h4>
-                <p class="footer-desc">Прикормочные кораблики российского производства</p>
-                <a href="tel:+79158706979">+7 (915) 870-69-79</a><br>
-                <a href="mailto:ivan.gelexi.tmb@gmail.com">ivan.gelexi.tmb@gmail.com</a>
-            </div>
-            <div>
-                <h4>Модели</h4>
-                <a href="#form">SpeeD V4</a>
-                <a href="#form">SpeeD V5</a>
-                <a href="#form">Mono</a>
-                <a href="#form">Solo</a>
-            </div>
-            <div>
-                <h4>Покупателям</h4>
-                <a href="#form">Доставка</a>
-                <a href="#form">Гарантия</a>
-                <a href="#form">Опции</a>
-                <a href="#form">Отзывы</a>
-            </div>
-            <div>
-                <h4>Контакты</h4>
-                <a href="https://t.me/+79997706979" target="_blank">Telegram</a>
-                <a href="https://wa.me/79158706979" target="_blank">WhatsApp</a>
-                <a href="https://yandex.ru/maps/213/tambov/" target="_blank">На карте</a>
-                <p class="footer-addr">Производство: Краснодарский край, ст. Ленинградская</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2016–2025 Бекас. Все права защищены.</p>
-            <p class="footer-policy">Заполняя формы на сайте, вы соглашаетесь с политикой обработки данных.</p>
-        </div>
-    </div>
-</footer>
-
-<!-- ============ ПЛАВАЮЩАЯ КНОПКА ============ -->
-<div class="floating-btn">
-    <a href="tel:+79158706979">
-        <span>📞</span> Связаться
-    </a>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
